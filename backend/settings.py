@@ -149,33 +149,25 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 DATABASES = {
-    # read os.environ['DATABASE_URL']
-    'default': env.db()  # <-- Updated!
-}
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'studitest-db',  
-#         'USER': 'postgres',  
-#         'PASSWORD': 'VuZUPhutNiRDSmV', 
-#         'HOST': 'studitest-db.internal', 
-#         'PORT': '5432',  
-#     }
-# }
-
-
-DATABASES = {
-    'default': {
+    'default': env.db(),  
+    'studitest': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'studitest-db',
+        'USER': 'postgres',
+        'PASSWORD': 'VuZUPhutNiRDSmV',
+        'HOST': 'studitest-db.internal',
+        'PORT': '5432',
+    },
+    'mercadona-local': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mercadonaDb',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432'
-
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
